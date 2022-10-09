@@ -312,5 +312,42 @@ class EP(unittest.TestCase):
         year = 2000
         self.assertEqual(number_of_days.numberOfDays(year, month), 'Invalid month')
 
+
+class CFG(unittest.TestCase):
+    def test_ep_case(self):
+        """CFG1"""
+        month = -2
+        year = 4000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 'Invalid year')
+        """CFG2"""
+        month = -2
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 'Invalid month')
+        """CFG3"""
+        month = 2
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 29)
+        """CFG4"""
+        month = 3
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 31)
+        """CFG5"""
+        month = 4
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 30)
+        """CFG6"""
+        month = 5
+        year = 2019
+        self.assertEqual(number_of_days.numberOfDays(year, month), 31)
+        """CFG7"""
+        month = 5
+        year = 2016
+        self.assertEqual(number_of_days.numberOfDays(year, month), 31)
+        """CFG8"""
+        month = 5
+        year = 2017
+        self.assertEqual(number_of_days.numberOfDays(year, month), 31)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
