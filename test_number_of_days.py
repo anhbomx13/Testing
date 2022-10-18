@@ -348,6 +348,24 @@ class CFG(unittest.TestCase):
         year = 2017
         self.assertEqual(number_of_days.numberOfDays(year, month), 31)
 
+class DFG(unittest.TestCase):
+    def test_ep_case(self):
+        """DFG1"""
+        month = 3
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 31)
+        """DFG2"""
+        month = 2
+        year = 2000
+        self.assertEqual(number_of_days.numberOfDays(year, month), 29)
+        """DFG3"""
+        month = 2
+        year = 1900
+        self.assertEqual(number_of_days.numberOfDays(year, month), 28)
+        """DFG4"""
+        month = 2
+        year = 2020
+        self.assertEqual(number_of_days.numberOfDays(year, month), 29)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
